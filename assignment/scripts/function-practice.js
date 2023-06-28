@@ -5,31 +5,33 @@ console.log('***** Function Practice *****');
 // to test it and display the result
 
 // 1. Function to return 'Hello World!'
+
 function hello() {
   return 'Hello World!';
 }
 // Call the function to test
 console.log('Test - should say "Hello World!"', hello());
 
-
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
-let name = 'Gabi';
 
 function helloName(name) {
-  return 'Hello, ' + name + '!';
+
+  return `Hello, ${name}!`;
 }
 // Remember to call the function to test
-helloName();
-console.log(helloName(name));
+helloName("Gabi");
+console.log(helloName("Gabi"));
+
+// Don't need to contatenate using template literal.
 
 // 3. Function to add two numbers together & return the result
-let firstNumber 
-let secondNumber 
+let firstNumber
+let secondNumber
 function addNumbers(firstNumber, secondNumber) {
   return firstNumber + secondNumber;
 }
-console.log(addNumbers(3,10));
+console.log(addNumbers(3, 10));
 
 // 4. Function to multiply three numbers & return the result
 let numberOne
@@ -39,39 +41,59 @@ let numberThree
 function multiplyThree(numberOne, numberTwo, numberThree) {
   return numberOne * numberTwo * numberThree;
 }
-console.log(multiplyThree(1,3,5));
+console.log(multiplyThree(1, 3, 5));
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
-let number 
+
 
 function isPositive(number) {
   if (number > 0) {
-    return number + ' is positive.';
-  } else (number <= 0)
-  { return number = ' is negative.';
+    return true;
+  } else {
+    return false;
+  }
 }
-} 
 
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
 console.log('isPositive - should say true', isPositive(3));
 console.log('isPositive - should say false', isPositive(0));
-console.log('isPositive - should say false', isPositive(-3));
-
+console.log('isPositive - should say false', isPositive(-3))
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
-function getLast(array) {
+favoriteFoods = ['pizza', 'tacos', 'snowcone', 'tacos'];
 
+
+function getLast(array) {
+  return array[array.length - 1];
 }
+
+getLast(favoriteFoods);
+console.log(getLast(favoriteFoods));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
 
+  for (let i = 0; i < array.length; i++) {
+    console.log(i)
+    if (value === array[i]) {
+      return true
+    } else if (
+      i + 1 === array.length
+    ) {
+      return false
+    }
+  }
 }
+// Riley helped me figure out the i + 1. Still need to make it make sense!
+
+find('tacos', favoriteFoods);
+console.log("find function " + find('tacos', favoriteFoods));
+console.log("find function " + find('cake', favoriteFoods));
 
 // ----------------------
 // Stretch Goals
